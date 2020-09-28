@@ -28,7 +28,7 @@ import (
 
 const Doc = `check for unused values by type
 
-Invoke with -important <typelist>, with comma-separated types. Names are
+Invoke with -types <typelist>, with comma-separated types. Names are
 checked against the name with no qualifier, just a package name, and the
 full import path. Reports any expression statements that have one or more
 of the given types.
@@ -92,7 +92,7 @@ var relevantTypes = map[types.Type]string{}
 func noticeme(pass *analysis.Pass) (_ interface{}, err error) {
 	parseImportant.Do(func() {
 		if importantTypes == "" {
-			err = errors.New("you must specify which types you care about (-important)")
+			err = errors.New("you must specify which types you care about (-types)")
 			return
 		}
 		importantList = strings.Split(importantTypes, ",")
