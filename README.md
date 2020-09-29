@@ -43,7 +43,7 @@ able to bypass this analysis. However, it does handle fairly arbitrary
 expressions, not just direct function or method calls.
 
 There is no guessing about pointers and non-pointers; if you specify a
-type of `foo` as important, functions returing `*foo` are not special, and
+type of `foo` as important, functions returning `*foo` are not special, and
 vise versa.
 
 Nested types are not recognized, but tuples (such as functions with multiple
